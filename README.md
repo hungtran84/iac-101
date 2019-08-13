@@ -1,16 +1,17 @@
-* Access to Cloud Shell
+## Access to Cloud Shell
 
 <p>
   <a target="__blank" href="https://console.cloud.google.com/cloudshell/open?cloudshell_git_repo=https://github.com/kanchimo/iac-101.git&amp"><img src="https://storage.googleapis.com/gweb-cloudblog-publish/images/google_cloud_shell.max-300x300.png"/></a>
 </p>
 
 
-* Execute prepare.sh
+## Execute prepare.sh
 ```
 chmod +x prepare.sh
 ./prepare.sh
 ```
 
+## Terraform
 * Initialize terraform
 ```
 terraform init
@@ -29,3 +30,10 @@ terraform apply --auto-approve
 ```
 terraform destroy --auto-approve
 ```
+
+## Ansible
+* Install ansible
+```
+sudo apt-get install ansible
+```
+
