@@ -36,3 +36,8 @@ terraform destroy --auto-approve
 sudo apt-get install ansible
 ```
 
+```
+sudo pip install apache-libcloud
+```
+
+
