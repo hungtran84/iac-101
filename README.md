@@ -1,7 +1,7 @@
 * Access to Cloud Shell
 
 <p>
-  <a target="__blank" href="https://console.cloud.google.com/cloudshell/open?cloudshell_git_repo=https://github.com/kanchimo/iac-101.git"><img src="https://storage.googleapis.com/gweb-cloudblog-publish/images/google_cloud_shell.max-300x300.png"/></a>
+  <a target="__blank" href="https://console.cloud.google.com/cloudshell/open?cloudshell_git_repo=https://github.com/kanchimo/iac-101.git&amp"><img src="https://storage.googleapis.com/gweb-cloudblog-publish/images/google_cloud_shell.max-300x300.png"/></a>
 </p>
 
 
