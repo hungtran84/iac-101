@@ -1,7 +1,5 @@
 * Access to Cloud Shell
- ```
- https://github.com/wizeline/IaC-demo.git
- ```
+![enter image description here](https://storage.googleapis.com/gweb-cloudblog-publish/images/google_cloud_shell.max-300x300.png)
 
 * Execute prepare.sh
 ```
