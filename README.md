@@ -37,7 +37,10 @@ sudo apt-get install ansible
 ```
 
 ```
-sudo pip install apache-libcloud
+sudo pip3 install apache-libcloud
+sudo pip3 install google-auth
 ```
+
+
 
 
