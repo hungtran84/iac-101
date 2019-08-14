@@ -2,7 +2,7 @@
   hosts: localhost
   vars:
     service_account_email: terransible@iac-demo-249505.iam.gserviceaccount.com
-    credentials_file: /home/hungts1984/.config/gcloud/account.json
+    credentials_file: ~/.config/gcloud/account.json
     project_id: iac-demo-249505
   tasks:
     - name: create multiple instances
@@ -13,8 +13,7 @@
         zone: us-central1-a
         machine_type: n1-standard-1
         image: debian-9
-        #state: present
-        state: absent
+        state: present
         service_account_email: "{{ service_account_email }}"
         credentials_file: "{{ credentials_file }}"
         project_id: "{{ project_id }}"
@@ -23,27 +22,12 @@
       tags:
         - create
 
-    - name: Save host data
-      add_host:
-        hostname: "{{ item.public_ip }}"
-        groupname: gce_instances_ips
-      with_items: "{{ gce.instance_data }}"
-
-    - name: Wait for SSH for instances
-      wait_for:
-        delay: 1
-        host: "{{ item.public_ip }}"
-        port: 22
-        state: started
-        timeout: 30
-      with_items: "{{ gce.instance_data }}"
 
     - name: delete instances
       gce:
         service_account_email: "{{ service_account_email }}"
         credentials_file: "{{ credentials_file }}"
         project_id: "{{ project_id }}"
-        #instance_names: "{{ gce.instance_names }}"
         instance_names: test1,test2
         zone: us-central1-a
         state: absent
