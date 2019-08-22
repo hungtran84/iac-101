@@ -6,6 +6,7 @@ export PROJECT_ID=$(gcloud config list --format 'value(core.project)' 2>/dev/nul
 export IAC_CREDS=~/.config/gcloud/account.json
 
 # Create Service Account for Terraform
+gcloud iam service-accounts describe terransible@${PROJECT_ID}.iam.gserviceaccount.com || \
 gcloud iam service-accounts create terransible \
   --display-name "IaC account"
 
