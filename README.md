@@ -33,15 +33,15 @@ terraform destroy --auto-approve
 ## Ansible
 * Install ansible
 ```
-sudo echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main" | sudo tee -a /etc/apt/sources.list
+echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main" | sudo tee -a /etc/apt/sources.list
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
 sudo apt update
 sudo apt-get install ansible
 ```
 
 ```
-sudo pip3 install apache-libcloud
-sudo pip3 install google-auth
+sudo pip install apache-libcloud
+sudo pip install google-auth
 ```
 
 
