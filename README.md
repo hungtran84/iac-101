@@ -38,10 +38,15 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
 sudo apt update
 sudo apt-get install ansible
 ```
-
+* Install required modules
 ```
 sudo pip install apache-libcloud
 sudo pip install google-auth
+```
+
+* Verify Ansible version ( version >= 2.8.0 )
+```
+ansible --version
 ```
 
 
