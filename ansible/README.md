@@ -1,15 +1,21 @@
 * Access to Cloud Shell
 
-* Clone the source code
- ```
- git clone https://github.com/wizeline/IaC-demo.git
- ```
-
-* Install Ansible commander
+* Run the playbook in Check Mode
 ```
-sudo ap-get install ansible
+ansible-playbook <your_playbook>.yaml --check
+
 ```
 
-* Run the playbook
+* Create GCE instance
+```
+ansible-playbook <your_playbook>.yaml --skip-tags "delete"
+```
+
+* Delete GCE instance
+```
+ansible-playbook <your_playbook>.yaml --tags "delete"
+```
+
+
 
 
