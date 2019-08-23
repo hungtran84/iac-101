@@ -14,6 +14,14 @@ gcloud config set compute/region us-central1
 
 ## Prepare your environment
 ```
+export PROJECT_ID=$(gcloud config list --format 'value(core.project)' 2>/dev/null)
+export TF_BACKEND=$PROJECT_ID-tf-backend
+export IAC_CREDS=~/.config/gcloud/account.json
+export GOOGLE_CREDENTIALS=${IAC_CREDS}
+export GOOGLE_PROJECT=${PROJECT_ID}
+```
+
+```
 ./prepare.sh
 ```
 

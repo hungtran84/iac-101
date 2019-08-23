@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
 # The adhoc script to create service account, generate credential key and assign the required permission to provision GCP resourcer,
-export PROJECT_ID=$(gcloud config list --format 'value(core.project)' 2>/dev/null)
-#export TF_BACKEND=$PROJECT_ID-tf-backend
-export IAC_CREDS=~/.config/gcloud/account.json
-export GOOGLE_CREDENTIALS=${IAC_CREDS}
-export GOOGLE_PROJECT=${PROJECT_ID}
 
 # Create Service Account for Terraform if none existed
 if [[ $(gcloud iam service-accounts list | grep terransible | wc -l) -eq 0 ]]
