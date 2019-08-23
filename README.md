@@ -9,6 +9,7 @@
 ```
 gcloud projects list
 gcloud config set project [Your Project ID]
+gcloud config set compute/region us-central1
 ```
 
 ## Prepare your environment
