@@ -3,9 +3,10 @@
   gather_facts: no
   vars:
       gcp_project: "{{ lookup('env', 'PROJECT_ID') }}"
+      #gcp_project: 
       gcp_cred_kind: serviceaccount
-      gcp_cred_file: "{{ lookup('env', 'IAC_CREDS') }}"
-      #gcp_cred_file: ~/.config/gcloud/account.json
+      #gcp_cred_file: "{{ lookup('env', 'IAC_CREDS') }}"
+      gcp_cred_file: /home/hungts1984/.config/gcloud/account.json
       zone: "us-central1-a"
       region: "us-central1"
 
