@@ -4,14 +4,12 @@
 # Create Service Account for Terraform if none existed
 if [[ $(gcloud iam service-accounts list | grep terransible | wc -l) -eq 0 ]]
 then
-    echo "Create Service Account"
     gcloud iam service-accounts create terransible --display-name "IaC account"
 
     # Generate a key for Service Accoun
     KEY_NUMS=$(gcloud iam service-accounts keys list --iam-account terransible@${PROJECT_ID}.iam.gserviceaccount.com | wc -l)
     if [[ $KEY_NUMS -lt 3 ]]
     then
-        echo "Create a Service Account Key"
         gcloud iam service-accounts keys create $IAC_CREDS \
         --iam-account terransible@${PROJECT_ID}.iam.gserviceaccount.com
     else
@@ -22,6 +20,10 @@ fi
 gcloud projects add-iam-policy-binding ${PROJECT_ID} \
 --member serviceAccount:terransible@${PROJECT_ID}.iam.gserviceaccount.com \
 --role roles/compute.instanceAdmin
+
+gcloud projects add-iam-policy-binding ${PROJECT_ID} \
+--member serviceAccount:terransible@${PROJECT_ID}.iam.gserviceaccount.com \
+--role roles/compute.securityAdmin
 
 # Enable GCP API required
 gcloud services enable cloudresourcemanager.googleapis.com
