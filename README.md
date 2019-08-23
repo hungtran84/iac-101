@@ -1,3 +1,4 @@
+-l
 ## Access to Cloud Shell
 
 <p>
@@ -6,6 +7,7 @@
 
 ## Setup Project
 ```
+gcloud projects list
 gcloud config set project [Your Project ID]
 ```
 
