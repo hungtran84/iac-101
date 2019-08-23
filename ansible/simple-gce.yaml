@@ -3,10 +3,8 @@
   gather_facts: no
   vars:
       gcp_project: "{{ lookup('env', 'PROJECT_ID') }}"
-      #gcp_project: 
       gcp_cred_kind: serviceaccount
-      #gcp_cred_file: "{{ lookup('env', 'IAC_CREDS') }}"
-      gcp_cred_file: /home/hungts1984/.config/gcloud/account.json
+      gcp_cred_file: "{{ lookup('env', 'IAC_CREDS') }}"
       zone: "us-central1-a"
       region: "us-central1"
 
@@ -15,7 +13,7 @@
      gcp_compute_disk:
         name: disk-instance
         size_gb: 50
-        source_image: projects/ubuntu-os-cloud/global/images/famiely/ubuntu-1604-lts
+        source_image: projects/centos-cloud/global/images/centos-7-v20180911
         zone: us-central1-a
         project: "{{ gcp_project }}"
         auth_kind: "{{ gcp_cred_kind }}"

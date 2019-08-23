@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# The adhoc script to create service account, generate credential key and assign the required permission to provision GCP resourcer,
+# The adhoc script to create service account, generate credential key and assign the required permission to provision GCP resourcer,cat
 
 # Create Service Account for Terraform if none existed
 if [[ $(gcloud iam service-accounts list | grep terransible | wc -l) -eq 0 ]]
